@@ -66,6 +66,15 @@ with open(csvpath) as election_data:
          candidate_votes[candidate_name] = 0
          # Add a vote to that candidate's count
       candidate_votes[candidate_name] += 1
+# Determine the percentage of votes for each candidate by looping through the counts
+# Iterate through the candidate liast
+for candidate_name in candidate_votes:
+   # Retrieve vote count of a candidate
+   votes = candidate_votes[candidate_name]
+   # Calculate the percentage of votes
+   vote_percentage = float(votes) / float(total_votes) * 100
+   # Print the candidate name and percentage of votes
+   print(f"{candidate_name}: received {vote_percentage}% of votes.")
 print(candidate_votes)
 
 
